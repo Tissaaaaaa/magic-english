@@ -5,6 +5,17 @@ from openai import OpenAI
 # Page configurations
 st.set_page_config(page_title="Magic English", page_icon="🪄", layout="centered")
 
+# 隐藏右上角的菜单、GitHub 标识和顶部工具栏
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+header {visibility: hidden;}
+footer {visibility: hidden;}
+[data-testid="stToolbar"] {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 st.title("🪄 Magic English")
 st.caption("Grasp any word, idiom, or phrase through pure intuition and vivid mental pictures.")
 
